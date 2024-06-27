@@ -1,19 +1,9 @@
-import * as dotenv from 'dotenv'
-
-import React from 'react'
-
-import SubscribeButton from './app/app'
-
-dotenv.config()
+import React from "react";
 
 const App = () => {
-
-    const url = process.env.url
-
     return(
-        <SubscribeButton arg={url} />
+        <div>hello world</div>
     )
-    
 }
 
 export default App
