@@ -1,18 +1,25 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
+
 
 const App = () => {
     const [url, setUrl] = useState('')
 
 
 
-    useEffect(async() => {
-        try{
-            let svrRes = await fetch('http://localhost:3000/url')
-            setUrl(svrRes.json())
-        }catch{
-            setUrl('error')
-        }
-    })
+    useEffect(() => {
+        async function fetchUrl() {
+            try {
+              const res = await fetch('http://localhost:3000/url');
+              const data = await res.json();
+              console.log(data);
+              setUrl(data.url);
+            } catch (error) {
+              console.error('Error fetching URL:', error);
+            }
+          }
+          
+          fetchUrl();
+    }, [])
 
 let elements;
 
