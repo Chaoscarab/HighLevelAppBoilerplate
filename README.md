@@ -1,7 +1,10 @@
 # HighLevelAppBoilerplate
 add config file object with syntax:
-let config = {
-    PRODUCTION:false,
-    URL:'https://yoururl.com/',
-    ROUTE:'/routetosendcode'
+
+let config = const config = {
+    production:false,
+    url:'https://yoururl.com',
+    route:'/url'
 }
+
+and npm run build to package app
