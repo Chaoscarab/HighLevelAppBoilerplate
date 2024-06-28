@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from "react";
-
+import config from '../config.js'
 
 const App = () => {
     const [url, setUrl] = useState('')
@@ -9,7 +9,7 @@ const App = () => {
     useEffect(() => {
         async function fetchUrl() {
             try {
-              const res = await fetch('http://localhost:3000/url');
+              const res = await fetch(config.production ? (config.url + config.route) : ('http://localhost:3000' + config.route));
               const data = await res.json();
               console.log(data);
               setUrl(data.url);
