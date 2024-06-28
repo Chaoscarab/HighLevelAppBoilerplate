@@ -9,7 +9,7 @@ const App = () => {
     useEffect(() => {
         async function fetchUrl() {
             try {
-              const res = await fetch(config.url + config.route);
+              const res = await fetch(config.url);
               const data = await res.json();
               console.log(data);
               setUrl(data.url);
